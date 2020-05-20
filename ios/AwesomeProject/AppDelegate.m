@@ -12,6 +12,8 @@
 #import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 #import <RNGoogleSignin/RNGoogleSignin.h>
+#import <React/RCTLinkingManager.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
@@ -28,6 +30,9 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [[FBSDKApplicationDelegate sharedInstance] application:application
+                           didFinishLaunchingWithOptions:launchOptions];
+
 #if DEBUG
   InitializeFlipper(application);
 #endif
@@ -46,8 +51,9 @@ static void InitializeFlipper(UIApplication *application) {
   [self.window makeKeyAndVisible];
   return YES;
 }
+// AppDelegate.m
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
-  return  [RNGoogleSignin application:application openURL:url options:options];
+  return [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url options:options] || [RNGoogleSignin application:application openURL:url options:options];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge

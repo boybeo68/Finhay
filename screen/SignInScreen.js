@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {AuthContext} from '../redux/context/AuthContext';
 import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
+import {AccessToken, LoginManager} from 'react-native-fbsdk';
 
 const PERMISSIONS = ['public_profile', 'email'];
 // import { colors, fonts, metrics } from 'styles';
@@ -52,6 +53,23 @@ export function SignInScreen() {
       }
     }
   };
+  const loginFacebook = async () => {
+    const currentAccessToken = await AccessToken.getCurrentAccessToken();
+    if (currentAccessToken) {
+      console.info('cureen token', currentAccessToken);
+    }
+    try {
+      let result = await LoginManager.logInWithPermissions(PERMISSIONS);
+      if (result.isCancelled) {
+      } else {
+        AccessToken.getCurrentAccessToken().then((data) => {
+          console.info(data);
+        });
+      }
+    } catch (error) {
+      alert('Login failed with error: ' + error);
+    }
+  };
   const _signOut = async () => {
     console.info('nhay vao day');
     try {
@@ -61,7 +79,9 @@ export function SignInScreen() {
   };
   return (
     <View style={styles.container}>
-      <Button title="Sign in" onPress={_signIn} />
+      <Button title="Sign in Google" onPress={_signIn} />
+      <View style={{height: 30}}></View>
+      <Button title="Sign in Facebook" onPress={loginFacebook} />
       <Text>{username}</Text>
     </View>
   );

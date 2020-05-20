@@ -27,10 +27,15 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>fb948241368962561</string>
 				<string>com.googleusercontent.apps.879227249390-e6qn43dqcq2npthd7kbbskg15oq5c87l</string>
 			</array>
 		</dict>
 	</array>
+  <key>FacebookAppID</key>
+  <string>948241368962561</string>
+  <key>FacebookDisplayName</key>
+  <string>Finhay</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
