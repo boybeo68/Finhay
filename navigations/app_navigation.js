@@ -29,7 +29,7 @@ const AuthNavigation = () => {
       ) : (
         <Stack.Screen
           name="Home"
-          options={{headerTitle: null}}
+          options={{header: null}}
           component={HomeScreen}
         />
       )}
