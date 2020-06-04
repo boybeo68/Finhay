@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export function SignInScreen() {
+export function SignInScreen({navigation}) {
   const [username, setUsername] = useState('');
 
   const {authContext} = useContext(AuthContext);
@@ -39,6 +39,7 @@ export function SignInScreen() {
       }
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
+      navigation.navigate('Home');
       setUsername(userInfo.user.email);
       console.info(userInfo);
     } catch (error) {
@@ -63,6 +64,7 @@ export function SignInScreen() {
       if (result.isCancelled) {
       } else {
         AccessToken.getCurrentAccessToken().then((data) => {
+          navigation.navigate('Home');
           console.info(data);
         });
       }
@@ -80,8 +82,14 @@ export function SignInScreen() {
   return (
     <View style={styles.container}>
       <Button title="Sign in Google" onPress={_signIn} />
-      <View style={{height: 30}}></View>
+      <View style={{height: 30}} />
       <Button title="Sign in Facebook" onPress={loginFacebook} />
+      <Button
+        title="Login"
+        onPress={() => {
+          navigation.navigate('Intro1');
+        }}
+      />
       <Text>{username}</Text>
     </View>
   );
