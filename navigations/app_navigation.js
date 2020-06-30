@@ -22,6 +22,7 @@ const AuthNavigation = () => {
           <Guide.Screen name="Intro1" component={IntroFirst} />
           <Guide.Screen name="Intro2" component={IntroSecond} />
           <Guide.Screen name="Intro3" component={IntroThree} />
+
           <Guide.Screen
             name="SignIn"
             component={SignInScreen}
