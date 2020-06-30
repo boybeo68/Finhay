@@ -8,12 +8,57 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:879227249390:android:3c9544afd3445d6bb549ff",
+        "android_client_info": {
+          "package_name": "com.finhayntq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879227249390-9e4o8nb9iae6vl91p1vt6q8p4b1nfg0v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finhayntq",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "879227249390-2rremedhe8r9k2ordjelm6knrvs7ej91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdKPdwCp7wxhUnCeCrYmLip_tvkxMLoTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879227249390-2rremedhe8r9k2ordjelm6knrvs7ej91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:879227249390:android:986e9837b99fc151b549ff",
         "android_client_info": {
           "package_name": "com.ntq.finhay"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "879227249390-rb3j49mds6741mqa6f890uugr6rj6ml8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ntq.finhay",
+            "certificate_hash": "9c95d8ed8109a03ff7db9b67482b0f999945f315"
+          }
+        },
         {
           "client_id": "879227249390-s29ps0jqfk6882mvuukn4se3madm5krk.apps.googleusercontent.com",
           "client_type": 1,

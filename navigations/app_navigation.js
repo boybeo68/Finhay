@@ -4,34 +4,35 @@ import {SignInScreen} from '../screen/SignInScreen';
 import HomeScreen from '../screen/HomeScreen';
 import {AuthContext} from '../redux/context/AuthContext';
 import * as React from 'react';
+import IntroFirst from '../screen/GuideScreen/Intro1';
+import IntroSecond from '../screen/GuideScreen/Intro2';
+import IntroThree from '../screen/GuideScreen/Intro3';
 
 const Stack = createStackNavigator();
-
+const Guide = createStackNavigator();
 const AuthNavigation = () => {
   const {state} = React.useContext(AuthContext);
 
   return (
     <Stack.Navigator headerMode="none">
       {state.isLoading ? (
-        // We haven't finished checking for the token yet
         <Stack.Screen name="Splash" component={SplashScreen} />
       ) : state.userToken == null ? (
-        // No token found, user isn't signed in
-        <Stack.Screen
-          name="SignIn"
-          component={SignInScreen}
-          options={{
-            headerTitle: null,
-            // title: 'Sign in',
-            animationTypeForReplace: state.isSignout ? 'pop' : 'push',
-          }}
-        />
+        <>
+          <Guide.Screen name="Intro1" component={IntroFirst} />
+          <Guide.Screen name="Intro2" component={IntroSecond} />
+          <Guide.Screen name="Intro3" component={IntroThree} />
+
+          <Guide.Screen
+            name="SignIn"
+            component={SignInScreen}
+            options={{
+              animationTypeForReplace: state.isSignout ? 'pop' : 'push',
+            }}
+          />
+        </>
       ) : (
-        <Stack.Screen
-          name="Home"
-          options={{headerTitle: null}}
-          component={HomeScreen}
-        />
+        <Stack.Screen name="Home" component={HomeScreen} />
       )}
     </Stack.Navigator>
   );

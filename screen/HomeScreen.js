@@ -4,7 +4,7 @@ import {
   View,
   ActivityIndicator,
   TouchableOpacity,
-  FlatList
+  FlatList,
 } from 'react-native';
 import React, {useContext} from 'react';
 import {AuthContext} from '../redux/context/AuthContext';
