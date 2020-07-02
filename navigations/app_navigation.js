@@ -8,7 +8,12 @@ import IntroFirst from '../screen/GuideScreen/Intro1';
 import IntroSecond from '../screen/GuideScreen/Intro2';
 import IntroThree from '../screen/GuideScreen/Intro3';
 import AsyncStorage from '@react-native-community/async-storage';
-import {Button} from 'react-native';
+import ButtonText from '../screen/components/ButtonText';
+import {HeaderBackButton} from '@react-navigation/stack';
+import PhoneScreen from '../screen/PhoneScreen';
+import Indicator from '../screen/components/Indicator';
+import NameScreen from '../screen/NameScreen';
+import SecurityScreen from '../screen/SecurityScreen';
 
 const Stack = createStackNavigator();
 const Guide = createStackNavigator();
@@ -59,14 +64,71 @@ const AuthNavigation = () => {
             component={SignInScreen}
             options={{
               headerTitle: false,
+              headerLeft: (props) => (
+                <HeaderBackButton
+                  {...props}
+                  labelVisible={false}
+                  tintColor={'black'}
+                />
+              ),
               headerRight: () => (
-                <Button
-                  onPress={() => alert('This is a button!')}
-                  title="Tìm mật khẩu"
-                  color="black"
+                <ButtonText
+                  style={{marginRight: 15}}
+                  color={'black'}
+                  onPress={() => {
+                    alert('test');
+                  }}
+                  size={14}
+                  title={'Tìm mật khẩu'}
                 />
               ),
               animationTypeForReplace: state.isSignout ? 'pop' : 'push',
+            }}
+          />
+          <Stack.Screen
+            name="Phone"
+            component={PhoneScreen}
+            options={{
+              headerTitle: (props) => (
+                <Indicator active={[true, false, false]} />
+              ),
+              headerLeft: (props) => (
+                <HeaderBackButton
+                  {...props}
+                  labelVisible={false}
+                  tintColor={'black'}
+                />
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="NameScreen"
+            component={NameScreen}
+            options={{
+              headerTitle: (props) => (
+                <Indicator active={[true, true, false]} />
+              ),
+              headerLeft: (props) => (
+                <HeaderBackButton
+                  {...props}
+                  labelVisible={false}
+                  tintColor={'black'}
+                />
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="Security"
+            component={SecurityScreen}
+            options={{
+              headerTitle: (props) => <Indicator active={[true, true, true]} />,
+              headerLeft: (props) => (
+                <HeaderBackButton
+                  {...props}
+                  labelVisible={false}
+                  tintColor={'black'}
+                />
+              ),
             }}
           />
         </>

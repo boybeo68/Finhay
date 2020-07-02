@@ -92,7 +92,7 @@ const IntroThree = ({navigation}) => (
     <View style={styles.nextContainer}>
       <TouchableOpacity
         onPress={() => {
-          AsyncStorage.setItem('@storage_Key', 'next');
+          // AsyncStorage.setItem('@storage_Key', 'next');
           navigation.navigate('SignIn');
         }}
         style={styles.next}>
