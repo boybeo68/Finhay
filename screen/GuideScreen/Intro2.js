@@ -7,12 +7,14 @@ import {
 } from 'react-native-responsive-screen';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {colors} from '../../styles/colors';
+import AsyncStorage from '@react-native-community/async-storage';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
     backgroundColor: '#fff',
     paddingTop: heightPercentageToDP('15%'),
+    justifyContent: 'space-between',
   },
   textTitle: {
     fontSize: 30,
@@ -89,7 +91,11 @@ const IntroSecond = ({navigation}) => (
       <View style={styles.line} />
     </View>
     <View style={styles.nextContainer}>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          AsyncStorage.setItem('@storage_Key', 'next');
+          navigation.navigate('SignIn');
+        }}>
         <Text style={{color: colors.grayText}}>Bỏ qua </Text>
       </TouchableOpacity>
       <TouchableOpacity

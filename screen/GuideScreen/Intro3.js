@@ -7,6 +7,8 @@ import {
 } from 'react-native-responsive-screen';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {colors} from '../../styles/colors';
+import AsyncStorage from '@react-native-community/async-storage';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -90,6 +92,7 @@ const IntroThree = ({navigation}) => (
     <View style={styles.nextContainer}>
       <TouchableOpacity
         onPress={() => {
+          AsyncStorage.setItem('@storage_Key', 'next');
           navigation.navigate('SignIn');
         }}
         style={styles.next}>
