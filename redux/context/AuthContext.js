@@ -17,6 +17,9 @@ const AuthContextProvider = (props) => {
       let userToken;
       try {
         userToken = await AsyncStorage.getItem('userToken');
+        if (userToken) {
+          dispatch({type: 'SIGN_IN', token: userToken});
+        }
       } catch (e) {}
       dispatch({type: 'RESTORE_TOKEN', token: userToken});
     };
@@ -26,6 +29,7 @@ const AuthContextProvider = (props) => {
   const authContext = useMemo(
     () => ({
       signIn: async (data) => {
+        AsyncStorage.setItem('userToken', 'auth-token');
         dispatch({type: 'SIGN_IN', token: 'dummy-auth-token'});
       },
       signOut: () => dispatch({type: 'SIGN_OUT'}),

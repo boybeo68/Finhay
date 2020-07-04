@@ -14,11 +14,18 @@ import PhoneScreen from '../screen/PhoneScreen';
 import Indicator from '../screen/components/Indicator';
 import NameScreen from '../screen/NameScreen';
 import SecurityScreen from '../screen/SecurityScreen';
+import ActiveScreen from '../screen/ActiveScreen';
+import GetCodeScreen from '../screen/GetCodeScreen';
+import WelcomeScreen from '../screen/WelcomeScreen';
+import {HeaderLeft} from '../screen/components/Header';
+import {Icon} from 'native-base';
+import {colors} from '../styles/colors';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const Stack = createStackNavigator();
-const Guide = createStackNavigator();
 const AuthNavigation = () => {
-  const {state} = React.useContext(AuthContext);
+  const {state, authContext} = React.useContext(AuthContext);
+
   const [guide, setGuide] = useState();
   useEffect(() => {
     const getData = async () => {
@@ -64,6 +71,7 @@ const AuthNavigation = () => {
             component={SignInScreen}
             options={{
               headerTitle: false,
+
               headerLeft: (props) => (
                 <HeaderBackButton
                   {...props}
@@ -131,9 +139,55 @@ const AuthNavigation = () => {
               ),
             }}
           />
+          <Stack.Screen
+            name="Active"
+            component={ActiveScreen}
+            options={{
+              headerTitle: null,
+              headerLeft: null,
+              headerRight: (props) => (
+                <ButtonText
+                  onPress={() => {
+                    authContext.signOut();
+                  }}
+                  // onPress={authContext.signOut}
+                  style={{marginRight: 20}}
+                  title={'Đăng xuất'}
+                />
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="GetCode"
+            component={GetCodeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Welcome"
+            component={WelcomeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
         </>
       ) : (
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          options={{
+            headerTitle: null,
+            headerLeft: (props) => <HeaderLeft />,
+            headerRight: (params) => (
+              <Icon
+                name="notifications"
+                style={{marginRight: 15, color: '#fff'}}
+              />
+            ),
+            headerStyle: {backgroundColor: colors.primary, height: hp('12%')},
+          }}
+          name="Home"
+          component={HomeScreen}
+        />
       )}
     </Stack.Navigator>
   );

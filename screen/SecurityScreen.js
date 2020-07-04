@@ -78,7 +78,7 @@ const SecurityScreen = ({navigation}) => {
   const [comit, setComit] = useState(false);
   const [password, setPassword] = useState();
   const onClickListener = (viewId) => {
-    navigation.navigate('Phone');
+    navigation.navigate('Active');
   };
   const renderPolicy = (params) => {};
 
