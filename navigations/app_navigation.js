@@ -107,6 +107,7 @@ const AuthNavigation = () => {
                   tintColor={'black'}
                 />
               ),
+              headerTitleAlign: 'center',
             }}
           />
           <Stack.Screen
@@ -116,6 +117,7 @@ const AuthNavigation = () => {
               headerTitle: (props) => (
                 <Indicator active={[true, true, false]} />
               ),
+
               headerLeft: (props) => (
                 <HeaderBackButton
                   {...props}
@@ -123,6 +125,7 @@ const AuthNavigation = () => {
                   tintColor={'black'}
                 />
               ),
+              headerTitleAlign: 'center',
             }}
           />
           <Stack.Screen
@@ -130,6 +133,7 @@ const AuthNavigation = () => {
             component={SecurityScreen}
             options={{
               headerTitle: (props) => <Indicator active={[true, true, true]} />,
+              headerTitleAlign: 'center',
               headerLeft: (props) => (
                 <HeaderBackButton
                   {...props}

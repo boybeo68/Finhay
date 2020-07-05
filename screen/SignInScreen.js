@@ -137,7 +137,7 @@ export function SignInScreen({navigation}) {
       }
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      navigation.navigate('Home');
+      navigation.navigate('Phone', {dataLogin: userInfo.user.email});
       setUsername(userInfo.user.email);
       console.info(userInfo);
     } catch (error) {
@@ -162,7 +162,7 @@ export function SignInScreen({navigation}) {
       if (result.isCancelled) {
       } else {
         AccessToken.getCurrentAccessToken().then((data) => {
-          navigation.navigate('Home');
+          navigation.navigate('Phone', {dataLogin: data});
           console.info(data);
         });
       }

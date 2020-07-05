@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: '#fff',
-    paddingTop: heightPercentageToDP('15%'),
+    // paddingTop: heightPercentageToDP('15%'),
     justifyContent: 'space-between',
   },
   textTitle: {
@@ -99,8 +99,12 @@ const IntroFirst = ({navigation}) => (
           navigation.navigate('Intro2');
         }}
         style={styles.next}>
-        <Text style={{color: '#fff', fontSize: 20}}> Tiếp theo </Text>
-        <Icon type={'AntDesign'} name={'arrowright'} style={{color: '#fff'}} />
+        <Text style={{color: '#fff', fontSize: 17}}> Tiếp theo </Text>
+        <Icon
+          type={'AntDesign'}
+          name={'arrowright'}
+          style={{color: '#fff', fontSize: 17}}
+        />
       </TouchableOpacity>
     </View>
   </View>

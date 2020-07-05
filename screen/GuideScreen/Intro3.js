@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: '#fff',
-    paddingTop: heightPercentageToDP('15%'),
+    // paddingTop: heightPercentageToDP('15%'),
   },
   textTitle: {
     fontSize: 30,

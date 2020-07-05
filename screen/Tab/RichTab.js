@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, StatusBar} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
 const RichTab = ({params}) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <StatusBar barStyle={'light-content'} backgroundColor={colors.primary} />
+
       <View style={styles.cardMain}>
         <View
           style={{
