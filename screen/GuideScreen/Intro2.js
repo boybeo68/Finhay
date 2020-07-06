@@ -14,13 +14,14 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#fff',
     // paddingTop: heightPercentageToDP('4%'),
+    alignItems: 'center',
     justifyContent: 'space-between',
   },
   textTitle: {
     fontSize: 30,
     color: '#57595A',
     fontWeight: 'bold',
-    margin: 20,
+    margin: 0,
     textAlign: 'center',
   },
   textSub: {
@@ -29,15 +30,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   image: {
-    width: widthPercentageToDP('80%'),
-    height: heightPercentageToDP('30%'),
-    margin: 30,
+    width: widthPercentageToDP('70%'),
+    height: heightPercentageToDP('25%'),
+    margin: 20,
   },
   nextContainer: {
     flexDirection: 'row',
-    margin: 70,
+    marginBottom: 80,
+    marginHorizontal: 40,
     alignItems: 'center',
     justifyContent: 'space-between',
+    // backgroundColor: 'red',
   },
   next: {
     borderRadius: 30,
@@ -66,7 +69,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: 20,
+    // backgroundColor: 'red',
   },
 });
 

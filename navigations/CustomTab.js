@@ -66,9 +66,9 @@ export function MyTabBar({
               onPress={onPress}
               onLongPress={onLongPress}
               style={{
-                width: 60,
-                height: 60,
-                borderRadius: 30,
+                width: 52,
+                height: 52,
+                borderRadius: 26,
                 backgroundColor: colors.primary,
                 alignSelf: 'flex-start',
                 justifyContent: 'center',
@@ -93,18 +93,19 @@ export function MyTabBar({
               onLongPress={onLongPress}
               style={{
                 flex: 1,
-                height: heightPercentageToDP('9%'),
+                height: heightPercentageToDP('8%'),
                 alignItems: 'center',
                 marginTop: 10,
               }}>
               <Icon
-                style={{fontSize: 25, color}}
+                style={{fontSize: 20, color}}
                 type="AntDesign"
                 name={iconName[index]}
               />
               <Text
                 style={{
                   color,
+                  fontSize: 12,
                 }}>
                 {label}
               </Text>

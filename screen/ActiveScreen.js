@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   body: {
-    height: hp('60%'),
+    height: hp('50%'),
     marginTop: 20,
     alignItems: 'center',
   },
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
   },
   footer: {
     justifyContent: 'center',
@@ -78,7 +78,7 @@ const ActiveScreen = ({navigation}) => {
             nexScreen(navigation, 'GetCode');
           }}
           style={{
-            width: wp('70%'),
+            width: wp('80%'),
             height: 50,
             borderRadius: 20,
             backgroundColor: '#fff',

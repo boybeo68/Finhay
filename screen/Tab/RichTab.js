@@ -13,14 +13,14 @@ import GuideMain from './Components.js/Guide';
 const styles = StyleSheet.create({
   container: {
     width: wp('100%'),
-    height: 1300,
+    height: hp('145%'),
     // backgroundColor: '#fff',
     alignItems: 'center',
   },
   cardMain: {
     padding: 10,
     width: wp('90%'),
-    height: hp('25%'),
+    height: hp('30%'),
     marginTop: 20,
     borderRadius: 20,
     backgroundColor: '#fff',
@@ -36,7 +36,7 @@ const RichTab = ({params}) => {
       <View style={styles.cardMain}>
         <View
           style={{
-            height: '40%',
+            height: '35%',
             flexDirection: 'row',
             paddingHorizontal: 10,
             justifyContent: 'space-between',
@@ -74,7 +74,7 @@ const RichTab = ({params}) => {
         </View>
         <View
           style={{
-            height: '40%',
+            height: '35%',
             flexDirection: 'row',
             paddingHorizontal: 10,
             justifyContent: 'space-between',
@@ -112,10 +112,11 @@ const RichTab = ({params}) => {
         </View>
         <View
           style={{
-            height: '20%',
+            height: '30%',
             flexDirection: 'row',
             paddingHorizontal: 10,
             justifyContent: 'space-between',
+            // backgroundColor: 'red',
           }}>
           <View
             style={{

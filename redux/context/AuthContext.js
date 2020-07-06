@@ -29,10 +29,13 @@ const AuthContextProvider = (props) => {
   const authContext = useMemo(
     () => ({
       signIn: async (data) => {
-        AsyncStorage.setItem('userToken', 'auth-token');
+        await AsyncStorage.setItem('userToken', 'auth-token');
         dispatch({type: 'SIGN_IN', token: 'dummy-auth-token'});
       },
-      signOut: () => dispatch({type: 'SIGN_OUT'}),
+      signOut: async () => {
+        await AsyncStorage.removeItem('userToken', '');
+        dispatch({type: 'SIGN_OUT'});
+      },
       signUp: async (data) => {
         dispatch({type: 'SIGN_IN', token: 'dummy-auth-token'});
       },

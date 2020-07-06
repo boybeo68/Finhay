@@ -157,6 +157,7 @@ const AuthNavigation = () => {
                   // onPress={authContext.signOut}
                   style={{marginRight: 20}}
                   title={'Đăng xuất'}
+                  size={12}
                 />
               ),
             }}
@@ -183,10 +184,13 @@ const AuthNavigation = () => {
             headerLeft: (props) => <HeaderLeft />,
             headerRight: (params) => (
               <Icon
-                onPress={() => {
-                  alert('test');
+                onPress={async () => {
+                  await AsyncStorage.removeItem('@storage_Key');
+                  authContext.signOut();
+                  // alert('test');
                 }}
-                name="notifications"
+                type="AntDesign"
+                name="logout"
                 style={{marginRight: 15, color: '#fff'}}
               />
             ),

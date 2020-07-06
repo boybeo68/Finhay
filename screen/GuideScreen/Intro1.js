@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#57595A',
     fontWeight: 'bold',
+    textAlign: 'center',
     margin: 20,
   },
   textSub: {
