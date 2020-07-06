@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 20,
+    paddingHorizontal: 20,
   },
   body: {
     height: hp('60%'),
@@ -78,15 +78,16 @@ const ActiveScreen = ({navigation}) => {
             nexScreen(navigation, 'GetCode');
           }}
           style={{
-            width: wp('60%'),
+            width: wp('70%'),
             height: 50,
             borderRadius: 20,
             backgroundColor: '#fff',
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: 20,
+            marginTop: 10,
           }}>
-          <Text style={{fontWeight: 'bold', color: colors.primary}}>
+          <Text
+            style={{fontWeight: 'bold', color: colors.primary, fontSize: 13}}>
             Chuyển sang kích hoạt bằng email
           </Text>
         </TouchableOpacity>
@@ -102,7 +103,8 @@ const ActiveScreen = ({navigation}) => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text style={{fontWeight: 'bold', color: colors.grayText}}>
+          <Text
+            style={{fontWeight: 'bold', color: colors.grayText, fontSize: 13}}>
             Bỏ qua
           </Text>
         </TouchableOpacity>

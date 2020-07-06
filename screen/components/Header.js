@@ -10,7 +10,7 @@ export const HeaderLeft = ({params}) => {
     <View style={{padding: 10, flexDirection: 'row'}}>
       <Thumbnail style={{marginRight: 5}} small source={{uri: uri}} />
       <View>
-        <Text style={{color: '#fff'}}>Nguyễn Thạc Tùng</Text>
+        <Text style={{color: '#fff'}}>Nhân nguyễn</Text>
         <View style={{flexDirection: 'row'}}>
           <Text style={{fontSize: 10, color: '#fff', marginTop: 3}}>
             THÀNH VIÊN BẠC
@@ -25,5 +25,3 @@ export const HeaderLeft = ({params}) => {
     </View>
   );
 };
-
-const HeaderRight = (params) => {};

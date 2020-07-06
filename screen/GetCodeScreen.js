@@ -11,10 +11,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 20,
+    paddingHorizontal: 20,
   },
   body: {
-    height: hp('50%'),
+    height: hp('45%'),
     marginTop: 20,
     alignItems: 'center',
   },
@@ -45,19 +45,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.grayText,
   },
-  //   inputContainer: {
-  //     borderBottomColor: '#F5FCFF',
-  //     backgroundColor: '#FFFFFF',
-  //     borderRadius: 30,
-  //     borderBottomWidth: 1,
-  //     width: '100%',
-  //     height: 45,
-  //     marginBottom: 10,
-  //     flexDirection: 'row',
-  //     alignItems: 'center',
-  //     marginTop: 10,
-  //     justifyContent: 'space-between',
-  //   },
 });
 const GetCodeScreen = ({navigation}) => {
   const [phone, setPhone] = React.useState();
@@ -87,7 +74,8 @@ const GetCodeScreen = ({navigation}) => {
         </View>
       </View>
       <View style={styles.footer}>
-        <Text style={{color: colors.grayText, marginVertical: 20}}>
+        <Text
+          style={{color: colors.grayText, marginVertical: 20, fontSize: 13}}>
           Nếu không nhận được mã kích hoạt bạn có thể bỏ qua bước này để tiếp
           tục sử dụng app. {'\n'}Bạn vẫn có thể xác thực lại số điện thoại bất
           cứ lúc nào

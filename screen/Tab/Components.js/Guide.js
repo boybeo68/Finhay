@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     height: heightPercentageToDP('40%'),
     width: '100%',
     padding: 20,
-    marginTop: heightPercentageToDP('8%'),
     // backgroundColor: '#fff',
   },
   button: {

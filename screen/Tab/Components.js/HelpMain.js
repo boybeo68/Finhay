@@ -6,15 +6,15 @@ import {Icon} from 'native-base';
 import {colors} from '../../../styles/colors';
 const styles = StyleSheet.create({
   container: {
-    height: heightPercentageToDP('40%'),
+    height: heightPercentageToDP('65%'),
     width: '100%',
     padding: 20,
     marginTop: heightPercentageToDP('1%'),
-    // backgroundColor: '#fff',
+    // backgroundColor: 'red',
   },
   button: {
     backgroundColor: '#fff',
-    paddingVertical: 12,
+    paddingVertical: 10,
     borderBottomWidth: 0.5,
     borderBottomColor: colors.grayText,
     flexDirection: 'row',

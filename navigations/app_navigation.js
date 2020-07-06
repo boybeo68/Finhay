@@ -183,6 +183,9 @@ const AuthNavigation = () => {
             headerLeft: (props) => <HeaderLeft />,
             headerRight: (params) => (
               <Icon
+                onPress={() => {
+                  alert('test');
+                }}
                 name="notifications"
                 style={{marginRight: 15, color: '#fff'}}
               />
